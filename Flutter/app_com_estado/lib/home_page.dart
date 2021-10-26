@@ -5,31 +5,25 @@ class HomePage extends StatefulWidget {
 
   @override
   State<HomePage> createState() {
+    // A classe "HomePageState" só pode ser instanciada
+    // por essa classe.
     return HomePageState();
   }
 }
 
 class HomePageState extends State<HomePage> {
-  int contador = 0;
+  int counter = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Column(
-        children: [
-          Text('Contador: $contador'),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
+    return GestureDetector(
+        // Pai de "Text"
+        child: Text('Contador:  $counter'),
+        // Detecta quando o usuário clicar no texto.
+        onTap: () {
+          // Modifica o "Estado" do widget.
           setState(() {
-            contador++;
+            counter++;
           });
-        },
-      ),
-    );
+        });
   }
 }

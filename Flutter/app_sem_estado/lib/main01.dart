@@ -11,12 +11,11 @@ class AppSemEstado02 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'App com a biblioteca Material',
-      // home é um parâmetro obrigatório, quando a
-      // biblioteca "Material" é usada.
-      home: Center(child: Text('Fluterando!!!')
-      )
-    );
+    return (Container(
+      child: Center(
+        child: Text(title,
+            textDirection: TextDirection.ltr, style: TextStyle(fontSize: 20.0)),
+      ),
+    ));
   }
 }
